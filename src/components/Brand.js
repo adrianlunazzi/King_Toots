@@ -3,7 +3,7 @@ import React from "react";
 const brand = () => {
   return (
     <div className="bran d-flex justify-content-center">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="/">
         <img
           src="/images/logo.png"
           alt="King Toots Music Store"
