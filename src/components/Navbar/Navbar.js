@@ -1,8 +1,9 @@
 import React from "react";
 import Brand from "../Brand";
 import Buttons from "../Buttons";
+import CartWidget from "../CardWidget/CartWidget";
 
-const Navbar2 = () => {
+const Navbar = () => {
   return (
     <div>
       <nav className="nabvar navbar-expand-lg navbar-dark bg-dark">
@@ -11,7 +12,7 @@ const Navbar2 = () => {
           <div className="col-9 col-lg-3">
             <Brand />
           </div>
-          <div className="col-3 col-lg-9">
+          <div className="col-3 col-lg-6">
             <button
               className="navbar-toggler my-2"
               type="button"
@@ -26,10 +27,13 @@ const Navbar2 = () => {
               <Buttons />
             </div>
           </div>
+          <div className="col-2 col-lg-3 py-3 justify-content-center">
+            <CartWidget />
+          </div>
         </div>
       </nav>
     </div>
   );
 };
 
-export default Navbar2;
+export default Navbar;
