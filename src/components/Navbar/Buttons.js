@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar/navbar.css";
+import "./navbar.css";
 const Buttons = () => {
   return (
     <div className="d-flex py-2">

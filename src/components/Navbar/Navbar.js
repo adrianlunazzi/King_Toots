@@ -1,7 +1,7 @@
 import React from "react";
 import Brand from "../Brand";
-import Buttons from "../Buttons";
-import CartWidget from "../CardWidget/CartWidget";
+import Buttons from "./Buttons";
+import CartWidget from "./CardWidget/CartWidget";
 
 const Navbar = () => {
   return (
