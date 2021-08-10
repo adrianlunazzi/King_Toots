@@ -1,39 +1,51 @@
 import React from "react";
-import Brand from "../Brand";
-import Buttons from "./Buttons";
 import CartWidget from "./CardWidget/CartWidget";
+import "./navbar.css";
 
-const Navbar = () => {
+const Menu = () => {
+  const showMenu = () => {
+    document.getElementById("showMenu").classList.toggle("show");
+  };
   return (
     <div>
-      <nav className="nabvar navbar-expand-lg navbar-dark bg-dark">
-        <div className="conteiner"></div>
-        <div className="row py-2">
-          <div className="col-9 col-lg-3">
-            <Brand />
+      <nav className="menu">
+        <label className="logoConteiner">
+          <img src="/images/logo.png" width="74px" height="54" alt="" />
+          <div className="logo">
+            <strong>King Toots</strong>
+            <br />
+            Music Store
           </div>
-          <div className="col-3 col-lg-6">
-            <button
-              className="navbar-toggler my-2"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon me-auto" />
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavDropdown">
-              <Buttons />
-            </div>
-          </div>
-          <div className="col-2 col-lg-3 py-3 justify-content-center">
-            <CartWidget />
-          </div>
+        </label>
+        <ul className="menu_items" id="showMenu">
+          <li>
+            <a href="/">Guitarras</a>
+          </li>
+          <li>
+            <a href="/">Bajos</a>
+          </li>
+          <li>
+            <a href="/">Baterias</a>
+          </li>
+          <li>
+            <a href="/">Vientos</a>
+          </li>
+          <li>
+            <a href="/">Teclados</a>
+          </li>
+          <li>
+            <a href="/">Amplificadores</a>
+          </li>
+        </ul>
+        <span className="btn_menu" onClick={() => showMenu()}>
+          <i className="fas fa-bars"></i>
+        </span>
+        <div>
+          <CartWidget />
         </div>
       </nav>
     </div>
   );
 };
 
-export default Navbar;
+export default Menu;

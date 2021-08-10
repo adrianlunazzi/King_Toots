@@ -1,6 +1,29 @@
+
 h3.greeting{
     color: rgb(105, 105, 105);
     text-align: center;
     font-family: 'Anton', sans-serif;
     margin-top: 20px;
 }
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+.conteiner .card{
+    justify-content: center;
+}
+.card{
+    padding: 15px;
+    margin: 5px;
+}
+
+@media  screen and (max-width: 505px){
+    .container{
+        display: inline-block;
+    }
+    }

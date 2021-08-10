@@ -65,3 +65,22 @@
 
 }
 
+@media  screen and (max-width: 798px){
+    .container-itemCount{
+        padding: 5px;
+           width: 220px;
+           height: 130px;
+           margin-left: 25px;
+    }
+       .stock{
+        left: 40px;
+    }
+    .btn-agregar-producto{
+        color: white;
+        margin-top: 10px;
+        width: 200px;
+        font-size: 14px;
+
+    }
+    }
+

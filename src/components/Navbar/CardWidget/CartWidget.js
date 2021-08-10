@@ -3,7 +3,7 @@ import "./cartwidget.css";
 
 const CartWidget = () => {
   return (
-    <div>
+    <div className="cart-icon">
       <a href="/">
         <i className="fas fa-shopping-cart"></i>
       </a>

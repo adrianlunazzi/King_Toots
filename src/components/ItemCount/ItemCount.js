@@ -88,11 +88,11 @@ export default function ItemCount(initialStock) {
         <div className="container-itemCount">
           <h6 className="stock">Stock Disponible {stock} </h6>
           <div className="container-buttons">
-            <button className="btn-count" onClick={() => decrement()}>
+            <button className="btn-count">
               <i className="far fa-caret-square-down"></i>
             </button>
             <div className="quantity">{count}</div>
-            <button className="btn-count" onClick={() => increment()}>
+            <button className="btn-count">
               <i className="far fa-caret-square-up"></i>
             </button>
           </div>

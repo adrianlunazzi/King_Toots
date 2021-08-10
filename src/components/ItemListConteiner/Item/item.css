@@ -1,0 +1,51 @@
+
+.card-title{
+    text-align: center;
+}
+.list-group-item{
+    text-align: center;
+}
+.list-group-item-price{
+    text-align: center;
+    color: red;
+    list-style:none;
+}
+.product-image{
+    display: flex;
+    align-items: center;
+    margin:auto;
+
+
+}
+.btn-more{
+  
+    background-color: rgb(91, 121, 204);
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.btn-more:hover{
+  
+    background-color: rgb(53, 76, 138);
+
+}
+.product-image img{
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.card:hover  {
+   border:solid 1px rgba(10, 1, 58, 0.212);
+   box-shadow: 2px 5px 5px 1px rgba(7, 12, 32, 0.137);
+   transition:  all .2s;
+   
+}
+
