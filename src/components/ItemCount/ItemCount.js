@@ -6,8 +6,10 @@ const useCounter = (initialStock, initialValue = 1) => {
   const [stock, setStock] = useState((initialStock = 10));
 
   const increment = () => {
-    if (stock > 0) {
+    if (count < stock) {
       setCount(count + 1);
+    } else {
+      setCount(count);
     }
   };
 
@@ -56,7 +58,7 @@ export default function ItemCount(initialStock) {
             <button
               className="btn-agregar-producto"
               onClick={() => handlerOnAdd()}>
-              Agregar {count} Producto al carrito
+              Agregar
             </button>
           </div>
         </div>
@@ -78,7 +80,7 @@ export default function ItemCount(initialStock) {
             <button
               className="btn-agregar-producto"
               onClick={() => handlerOnAdd()}>
-              Agregar {count} Productos al carrito
+              Agregar
             </button>
           </div>
         </div>

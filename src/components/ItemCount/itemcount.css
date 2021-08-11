@@ -1,17 +1,16 @@
 .container-itemCount{
  padding: 10px;
-    background-color:  #212529;
-    width: 320px;
-    height: 130px;
+    width: 100%;
+    height: 120px;
     justify-content: center;
-    margin-left: 50px;
+
 }
 
 .stock{
-    align-items: center;
-    position: relative;
-    left: 80px;
-    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: rgb(34, 34, 34);
 }
 
 .container-buttons{
@@ -21,46 +20,55 @@
 }
 
 .quantity{
+    
     background-color: rgba(129, 161, 190, 0.596);
-    color: rgb(255, 255, 255);
-    width: 250px;
-    height: 30px;
+    color: rgb(0, 41, 68);
+    width:160px;
+    height: 22px;
     text-align: center;
-    align-items: center;
 
 }
 
 .btn-count{
-    background-color: rgba(1, 58, 110, 0.596);
-    color: rgb(255, 255, 255);
-    border:0;
-    width: 40;
-    height: 30px;
-    text-align: center;
+    background-color: white;
+    color: rgba(1, 58, 110, 0.596);
+    border: none;
+    margin-top: 2px;
 }
-.btn-count:hover{
-    background-color: rgba(0, 25, 49, 0.877);
-    color: rgb(255, 6, 201);
+.fa-caret-square-down,
+.fa-caret-square-up{
+    font-size:25px;
+}
 
+.btn-count:hover{
+    color: rgb(0, 57, 180);
+}
+
+.container-buttons{
+padding: 0;
+margin: 0;
 }
 
 .btn-agregar-producto{
-
     border: none;
+    font-size: 10px;
     background-color:rgb(14, 31, 27); ;
     color: white;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
     text-transform: uppercase;
-    width: 300px;
-
+    width: 170px;
+    height: 30px;
+    border-radius: 5px;
 }
+
 .btn-agregar-producto:hover{
 
     border: 0;
     background-color: rgb(28, 61, 54);
     color: white;
+    
 
 
 }

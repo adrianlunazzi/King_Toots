@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "../../ItemCount/ItemCount";
 import "./item.css";
 
 const Item = (props) => {
@@ -16,10 +17,16 @@ const Item = (props) => {
             <li className="list-group-item-price">
               <strong>{props.price}</strong>
             </li>
+            <li className="list-group-item-price">
+              <strong>{props.stock}</strong>
+            </li>
           </ul>
           <button type="button" className="btn-more">
             Mas Info
           </button>
+        </div>
+        <div className="counter">
+          <ItemCount stock={props.stock} />
         </div>
       </div>
     </>
