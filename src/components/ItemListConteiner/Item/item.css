@@ -10,15 +10,14 @@
     color: red;
     list-style:none;
 }
-.product-image{
+.card-image img{
     display: flex;
     align-items: center;
     margin:auto;
-
-
+    width: 40vh;
+    height: 100%;
 }
 .btn-more{
-  
     background-color: rgb(91, 121, 204);
     border: 0;
     border-radius: 4px;
@@ -30,16 +29,7 @@
     width: 100%;
 }
 .btn-more:hover{
-  
     background-color: rgb(53, 76, 138);
-
-}
-.product-image img{
-    width: 150px;
-    height: 150px;
-    padding: 0;
-    margin: 0;
-
 }
 
 .card:hover  {

@@ -6,7 +6,7 @@ const Item = (props) => {
   return (
     <>
       <div className="card">
-        <div className="product-image">{props.img_product}</div>
+        <div className="card-image">{props.img_product}</div>
         <div className="card-body">
           <ul className="list-group list-group-flush">
             <h4 className="card-title">{props.product_type}</h4>
@@ -17,16 +17,14 @@ const Item = (props) => {
             <li className="list-group-item-price">
               <strong>{props.price}</strong>
             </li>
-            <li className="list-group-item-price">
-              <strong>{props.stock}</strong>
-            </li>
+            <li className="list-group-item-price"></li>
           </ul>
           <button type="button" className="btn-more">
             Mas Info
           </button>
         </div>
         <div className="counter">
-          <ItemCount stock={props.stock} />
+          <ItemCount productStock={props.stock} />
         </div>
       </div>
     </>

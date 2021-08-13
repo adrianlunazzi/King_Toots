@@ -3,7 +3,7 @@ import "./itemcount.css";
 
 const useCounter = (initialStock, initialValue = 1) => {
   const [count, setCount] = useState((initialValue = 1));
-  const [stock, setStock] = useState((initialStock = 10));
+  const [stock, setStock] = useState(initialStock);
 
   const increment = () => {
     if (count < stock) {
@@ -36,8 +36,9 @@ const useCounter = (initialStock, initialValue = 1) => {
   };
 };
 
-export default function ItemCount(initialStock) {
-  const { stock, count, increment, decrement, handlerOnAdd } = useCounter(1);
+export default function ItemCount({ productStock }) {
+  const { stock, count, increment, decrement, handlerOnAdd } =
+    useCounter(productStock);
 
   return (
     <>

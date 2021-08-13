@@ -1,0 +1,47 @@
+.details-container{
+    background-color: rgba(175, 175, 175, 0.418);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 3rem;
+    margin: 3rem;
+}
+
+.product-image img{
+    width: 70%;
+    height: 100%;
+}
+
+.product-description{
+    border: solid, 1px, grey;
+    width: 90%;
+}
+.product-description p{
+    color: rgb(6, 70, 180);
+}
+
+.itemcount{
+    margin: auto;
+}
+
+.fa-credit-card {
+    margin-right: 1rem;
+}
+
+@media  screen and (max-width: 768px){
+    .details-container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .product-image img{
+        padding: 5px;
+        margin-left: 15%;
+    }
+    .product-description{
+        margin: auto;
+        text-align: center;
+    }
+}
+

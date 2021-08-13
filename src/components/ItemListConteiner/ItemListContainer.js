@@ -1,63 +1,8 @@
 import React from "react";
+import { items } from "./ItemList/ItemList";
 import Item from "./Item/Item";
-import "./itemlistcontainer.css";
 
-const items = [
-  {
-    id: 1,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Fender",
-    Model: "Stratocaster",
-    Price: 85000,
-    Stock: 15,
-    Img_product: <img src="/images/thumbs/stratocaster.jpg" alt="" />,
-  },
-  {
-    id: 2,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Fender",
-    Model: "Telecaster",
-    Price: 60000,
-    Stock: 4,
-    Img_product: <img src="/images/thumbs/telecaster.jpg" alt="" />,
-  },
-  {
-    id: 3,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Gibson",
-    Model: "Les Paul Clasic",
-    Price: 110000,
-    Stock: 2,
-    Img_product: <img src="/images/thumbs/les-paul.jpg" alt="" />,
-  },
-  {
-    id: 4,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Gibson",
-    Model: "SG",
-    Price: 85000,
-    Stock: 7,
-    Img_product: <img src="/images/thumbs/sg.jpg" alt="" />,
-  },
-  {
-    id: 5,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Ibanez",
-    Model: "GRx 70Qa",
-    Price: 75000,
-    Stock: 10,
-    Img_product: <img src="/images/thumbs/GRx70Qa.jpg" alt="" />,
-  },
-  {
-    id: 6,
-    Product_type: "Guitarra Eléctrica",
-    Brand: "Jackson",
-    Model: "Dinky JS12",
-    Price: 60000,
-    Stock: 3,
-    Img_product: <img src="/images/thumbs/DinkyJS12.jpg" alt="" />,
-  },
-];
+import "./itemlistcontainer.css";
 
 const getItemList = () => {
   return new Promise((resolve, reject) => {
