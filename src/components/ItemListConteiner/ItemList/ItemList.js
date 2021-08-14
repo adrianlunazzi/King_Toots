@@ -63,4 +63,48 @@ export const items = [
       <img src="/images/1000x1000/jackson-dinky-js12-black.jpg" alt="" />
     ),
   },
+  {
+    id: 7,
+    Product_type: "Bajo Electrico",
+    Brand: "Ibanez",
+    Model: "Gio Series Gsr180 Bk",
+    Price: 42800,
+    Stock: 4,
+    Category: "Bajo",
+    Img_product: (
+      <img src="/images/1000x1000/ibanez-gio-gsr180-bk-100017054.jpg" alt="" />
+    ),
+  },
+  {
+    id: 8,
+    Product_type: "Bajo Eléctrico",
+    Brand: "Fender",
+    Model: "Precision",
+    Price: 180000,
+    Stock: 2,
+    Category: "Bajo",
+    Img_product: <img src="images/1000x1000/fender precision.jpg" alt="" />,
+  },
+  {
+    id: 9,
+    Product_type: "Bajo Eléctrico",
+    Brand: "Gibson",
+    Model: "Thunderbird",
+    Price: 472000,
+    Stock: 1,
+    Category: "Bajo",
+    Img_product: (
+      <img src="images/1000x1000/gibson-thunderbird-eb.jpg" alt="" />
+    ),
+  },
+  {
+    id: 10,
+    Product_type: "Bajo Eléctrico",
+    Brand: "Jackson",
+    Model: "Spectra Js3q",
+    Price: 109000,
+    Stock: 6,
+    Category: "Bajo",
+    Img_product: <img src="images/1000x1000/bajo Spectra Js3q.jpg" alt="" />,
+  },
 ];
