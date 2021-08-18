@@ -1,0 +1,12 @@
+
+.item-list-conteiner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem;
+
+}
+
+.item-list-conteiner a{
+    text-decoration: none;
+}

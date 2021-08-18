@@ -2,12 +2,12 @@
     width: 50px;
     margin: auto;
 }
-.fa-shopping-cart{
+ .fa-opencart{
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
 
     }
-    .fa-shopping-cart:hover{
-     color: rgb(105, 230, 203);
+   .fa-opencart:hover{
+     color: #354C8A
 
     }    

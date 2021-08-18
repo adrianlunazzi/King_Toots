@@ -5,7 +5,7 @@ const CartWidget = () => {
   return (
     <div className="cart-icon">
       <a href="/">
-        <i className="fas fa-shopping-cart"></i>
+        <i className="fab fa-opencart"></i>
       </a>
     </div>
   );

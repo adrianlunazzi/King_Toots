@@ -1,4 +1,4 @@
-export const items = [
+const data = [
   {
     id: 1,
     Product_type: "Guitarra Eléctrica",
@@ -108,3 +108,5 @@ export const items = [
     Img_product: <img src="images/1000x1000/bajo Spectra Js3q.jpg" alt="" />,
   },
 ];
+
+export default data;

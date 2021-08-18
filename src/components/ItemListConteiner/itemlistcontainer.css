@@ -1,4 +1,6 @@
-
+*{
+    text-decoration: none;
+}
 h3.greeting{
     color: rgb(105, 105, 105);
     text-align: center;
@@ -6,11 +8,8 @@ h3.greeting{
     margin-top: 20px;
 }
 
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+.spinner-border{
+    text-align:center;
 }
 .conteiner .card{
     justify-content: center;
@@ -18,7 +17,9 @@ h3.greeting{
 .card{
     padding: 15px;
     margin: 5px;
+    text-decoration: none;
 }
+
 
 @media  screen and (max-width: 505px){
     .container{

@@ -1,4 +1,9 @@
-
+*{
+    text-decoration: none;
+}
+.card{
+    margin-bottom: 2rem;
+}
 .card-title{
     text-align: center;
 }
@@ -13,9 +18,13 @@
 .card-image img{
     display: flex;
     align-items: center;
-    margin:auto;
-    width: 40vh;
-    height: 100%;
+    margin:20px auto;
+    width: 17vw;
+    height: 85%;
+    
+}
+.button a{
+    text-decoration: none;
 }
 .btn-more{
     background-color: rgb(91, 121, 204);
@@ -27,6 +36,7 @@
     justify-content: center;
     margin-top: 20px;
     width: 100%;
+  
 }
 .btn-more:hover{
     background-color: rgb(53, 76, 138);

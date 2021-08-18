@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .menu{
@@ -25,17 +26,31 @@ img{
     height: 54px;
 }
 .logo{
+    align-items: center;
+    height: 60px;
+}
+
+.logo a {
+        text-decoration: none;
+    }
+
+
+.logo h1{
+    color: white;
+    font-size: 24px;
+    font-family: 'Cabin Sketch', cursive;
+}
+.logo p{
     color: white;
     font-size: 18px;
-
+    font-family: 'Cabin Sketch', cursive;
 }
 .menu_items{
     display: flex;
     color: white;
     align-items: center;
-   margin: auto;
-
-
+    margin: auto;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 .menu_items li{
@@ -45,7 +60,7 @@ list-style: none;
 
 .menu_items li a{
 padding: 20px 5px;
-font-size: 16px;
+font-size: 24px;
 color: white;
 display: block;
 text-decoration: none;
@@ -53,7 +68,7 @@ align-items: center;
 }
 
 .menu_items li a:hover{
-background-color: rgba(123, 125, 248, 0.322);
+color: rgba(133, 136, 228, 0.952);
 margin: auto;
 transition:  all .3s;
 height: 100wh;
@@ -73,7 +88,19 @@ transform: all .6s;
 ul.show{
 top: 65px;
 }
-
+@media  screen and (max-width: 1000px){
+    .menu_items li a{
+        font-size: 18px;
+        }
+        .logo h1{
+            font-size: 20px;
+            font-family: 'Cabin Sketch', cursive;
+            
+        }
+        .logo p{
+            font-size: 16px;
+        }
+}
 @media  screen and (max-width: 798px){
     .menu_items li a{
         font-size: 16px;

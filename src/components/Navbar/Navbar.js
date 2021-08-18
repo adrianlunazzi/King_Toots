@@ -1,5 +1,6 @@
 import React from "react";
 import CartWidget from "./CardWidget/CartWidget";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Menu = () => {
@@ -10,31 +11,34 @@ const Menu = () => {
     <div>
       <nav className="menu">
         <label className="logoConteiner">
-          <img src="/images/logo.png" width="74px" height="54" alt="" />
+          <Link to="/">
+            <img src="/images/logo.png" width="74px" height="54" alt="" />
+          </Link>
           <div className="logo">
-            <strong>King Toots</strong>
-            <br />
-            Music Store
+            <Link to="/">
+              <h1>King Toots</h1>
+              <p>Music Store</p>
+            </Link>
           </div>
         </label>
         <ul className="menu_items" id="showMenu">
           <li>
-            <a href="/">Guitarras</a>
+            <Link to="/Guitarra"> Guitarras</Link>
           </li>
           <li>
-            <a href="/">Bajos</a>
+            <Link to="/Bajo">Bajos</Link>
           </li>
           <li>
-            <a href="/">Baterias</a>
+            <Link to="/Baterias">Baterias</Link>
           </li>
           <li>
-            <a href="/">Vientos</a>
+            <Link to="/Vientos">Vientos</Link>
           </li>
           <li>
-            <a href="/">Teclados</a>
+            <Link to="/Teclados">Teclados</Link>
           </li>
           <li>
-            <a href="/">Amplificadores</a>
+            <Link to="/amplificadores">Amplificadores</Link>
           </li>
         </ul>
         <span className="btn_menu" onClick={() => showMenu()}>

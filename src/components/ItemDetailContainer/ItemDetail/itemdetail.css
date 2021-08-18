@@ -1,3 +1,6 @@
+*{
+    text-decoration: none;
+}
 .details-container{
     background-color: rgba(175, 175, 175, 0.418);
     display: grid;
@@ -19,13 +22,20 @@
 .product-description p{
     color: rgb(6, 70, 180);
 }
-
+.product-description h2{
+    font-size: 30px;
+}
+.product-description h4{
+    font-size: 20px;
+}
 .itemcount{
     margin: auto;
 }
 
-.fa-credit-card {
+.fa-cc-visa {
     margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #354C8A;
 }
 
 @media  screen and (max-width: 768px){
@@ -42,6 +52,17 @@
     .product-description{
         margin: auto;
         text-align: center;
+    }
+    .product-description h2{
+        font-size: 20px;
+    }
+    .product-description h4{
+        font-size: 14px;
+    }
+    .fa-cc-visa {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+        color: #354C8A;
     }
 }
 
