@@ -1,5 +1,6 @@
-*{
+.detail-container-list a{
     text-decoration: none;
+    
 }
 .details-container{
     background-color: rgba(175, 175, 175, 0.418);
@@ -8,6 +9,9 @@
     grid-gap: 1rem;
     padding: 3rem;
     margin: 3rem;
+}
+.product-container a{
+    text-decoration: none;
 }
 
 .product-image img{

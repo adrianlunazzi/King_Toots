@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  const { id, Category } = useParams();
 
   useEffect(() => {
     const productos = () => {
@@ -17,29 +17,47 @@ const ItemDetailContainer = () => {
       });
     };
     productos().then((data) => {
-      const producto = data.find((producto) => producto.id === id);
+      if (id != null) {
+        const productDetails = data.filter(
+          (productDetail) => productDetail.id == id
+        );
+        setProducto(productDetails);
+        setLoading(false);
+      } else {
+        setProducto(data);
+        setLoading(false);
+      }
+
+      const producto = data.find((producto) => producto.id == id);
       setProducto(producto);
       setLoading(false);
     });
-  }, [id]);
+  }, [id, Category]);
 
   return (
     <>
       {loading ? (
-        <h2>
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
+        <h6>
+          <div className="d-flex align-items-center">
+            <strong>Cargando Productos...</strong>
+            <div
+              className="spinner-border ms-auto"
+              role="status"
+              aria-hidden="true"
+            />
           </div>
-          CARGANDO PRODUCTO...
-        </h2>
+        </h6>
       ) : (
         <ItemDetail
+          key={producto.id}
           id={producto.id}
           product_type={producto.Product_type}
           model={producto.Model}
+          brand={producto.Brand}
           price={"Precio $" + producto.Price}
           img_product={producto.Img_product}
           stock={producto.Stock}
+          description={producto.description}
         />
       )}
     </>

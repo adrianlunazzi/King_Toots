@@ -10,3 +10,7 @@
 .item-list-conteiner a{
     text-decoration: none;
 }
+.spinner-grow{
+padding: 10px;
+text-align: center;
+}

@@ -35,12 +35,16 @@ const ItemList = () => {
   return (
     <div className="item-list-conteiner">
       {loading ? (
-        <h2>
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <h6>
+          <div className="d-flex align-items-center">
+            <strong>Cargando Productos...</strong>
+            <div
+              className="spinner-border ms-auto"
+              role="status"
+              aria-hidden="true"
+            />
           </div>
-          Loading Products...
-        </h2>
+        </h6>
       ) : (
         productos.map((producto) => (
           <Item

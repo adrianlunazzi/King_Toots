@@ -1,9 +1,10 @@
 import ItemList from "../ItemList/ItemList";
-
+import Slider from "../Slider/Slider";
 const ItemListContainer = (props) => {
   return (
     <div className="list-conteiner">
-      <h2>{props.greeting}</h2>
+      <Slider />
+      <h2> {props.greeting}</h2>
       <div>
         <ItemList />
       </div>

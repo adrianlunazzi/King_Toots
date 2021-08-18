@@ -1,6 +1,11 @@
 *{
     text-decoration: none;
 }
+.list-conteiner h2 {
+    text-align: center;
+    font-size: 28px;
+
+}
 h3.greeting{
     color: rgb(105, 105, 105);
     text-align: center;
