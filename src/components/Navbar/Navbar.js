@@ -38,7 +38,7 @@ const Menu = () => {
             <Link to="/Teclados">Teclados</Link>
           </li>
           <li>
-            <Link to="/amplificadores">Amplificadores</Link>
+            <Link to="/Amplificadores">Amplificadores</Link>
           </li>
         </ul>
         <span className="btn_menu" onClick={() => showMenu()}>

@@ -14,8 +14,6 @@ const data = [
     Product_type: "Guitarra Eléctrica",
     Brand: "Fender",
     Model: "Telecaster",
-    Description:
-      "La Fender Telecaster es una guitarra eléctrica de cuerpo macizo. Se caracteriza por la simplicidad en su diseño y por el sonido que se obtiene de sus dos pastillas de bobinado simple o single coil, que aparecen en la inmensa mayoría de sus modelos en lugar de las de bobinado doble o humbuckers que aparecieron posteriormente en otras guitarras. Dicho sonido se considera especialmente adecuado para la guitarra rítmica, aunque se utiliza igualmente en el soft rock, en el rock de los 60 o en el punk, también muy utilizada en el math rock y la new wave; pero sobre todo es la guitarra eléctrica por excelencia para la música country.",
     Price: 75000,
     Stock: 4,
     Category: "Guitarra",
@@ -85,7 +83,7 @@ const data = [
     Price: 180000,
     Stock: 2,
     Category: "Bajo",
-    Img_product: <img src="images/1000x1000/fender precision.jpg" alt="" />,
+    Img_product: <img src="/images/1000x1000/fender precision.jpg" alt="" />,
   },
   {
     id: 9,
@@ -96,7 +94,7 @@ const data = [
     Stock: 1,
     Category: "Bajo",
     Img_product: (
-      <img src="images/1000x1000/gibson-thunderbird-eb.jpg" alt="" />
+      <img src="/images/1000x1000/gibson-thunderbird-eb.jpg" alt="" />
     ),
   },
   {
@@ -107,7 +105,7 @@ const data = [
     Price: 109000,
     Stock: 6,
     Category: "Bajo",
-    Img_product: <img src="images/1000x1000/bajo Spectra Js3q.jpg" alt="" />,
+    Img_product: <img src="/images/1000x1000/bajo Spectra Js3q.jpg" alt="" />,
   },
   {
     id: 11,
@@ -117,7 +115,59 @@ const data = [
     Price: 205000,
     Stock: 2,
     Category: "Bajo",
-    Img_product: <img src="images/1000x1000/bajo Spectra Js3q.jpg" alt="" />,
+    Img_product: <img src="/images/1000x1000/bajo-prs.jpg" alt="" />,
+  },
+  {
+    id: 12,
+    Product_type: "Bateria",
+    Brand: "Mapex",
+    Model: "Tornado III",
+    Price: 75999,
+    Stock: 2,
+    Category: "Baterias",
+    Img_product: <img src="/images/1000x1000/tornado3.jpg" alt="" />,
+  },
+  {
+    id: 13,
+    Product_type: "Bateria",
+    Brand: "Tama",
+    Model: "Superstar Hyperdrive",
+    Price: 329999,
+    Stock: 2,
+    Category: "Baterias",
+    Img_product: (
+      <img src="/images/1000x1000/bateria-tama-superstar.jpg" alt="" />
+    ),
+  },
+  {
+    id: 14,
+    Product_type: "Saxo Tenor",
+    Brand: "Yanaha",
+    Model: "YTS 280",
+    Price: 410999,
+    Stock: 3,
+    Category: "Vientos",
+    Img_product: <img src="/images/1000x1000/yts280.jpg" alt="" />,
+  },
+  {
+    id: 15,
+    Product_type: "Teclado",
+    Brand: "Casio",
+    Model: "CTK-3500",
+    Price: 29999,
+    Stock: 6,
+    Category: "Teclados",
+    Img_product: <img src="/images/1000x1000/casio3500.jpg" alt="" />,
+  },
+  {
+    id: 16,
+    Product_type: "Amplificador",
+    Brand: "Fender",
+    Model: "Champion 40",
+    Price: 58999,
+    Stock: 2,
+    Category: "Amplificadores",
+    Img_product: <img src="/images/1000x1000/fender-champion40.jpg" alt="" />,
   },
 ];
 

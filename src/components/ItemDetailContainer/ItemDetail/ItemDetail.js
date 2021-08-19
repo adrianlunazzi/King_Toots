@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import "./itemdetail.css";
 
@@ -22,9 +23,8 @@ const ItemDetail = ({
             <div className="product-description">
               <h3>
                 {product_type}
-                {brand}
                 <br />
-                {model}
+                {brand} - {model}
               </h3>
               <h2>
                 <strong>{price}</strong>

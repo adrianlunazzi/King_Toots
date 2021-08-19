@@ -15,8 +15,8 @@ const Item = ({
 }) => {
   return (
     <>
-      <Link to={`/${category}/${id}`}>
-        <div className="card">
+      <div className="card">
+        <Link to={`/${category}/${id}`}>
           <div className="card-image">{img_product}</div>
           <div className="card-body">
             <ul className="list-group list-group-flush">
@@ -34,11 +34,11 @@ const Item = ({
               Mas Info
             </button>
           </div>
-          <div className="counter">
-            <ItemCount productStock={stock} />
-          </div>
+        </Link>
+        <div className="counter">
+          <ItemCount productStock={stock} />
         </div>
-      </Link>
+      </div>
     </>
   );
 };

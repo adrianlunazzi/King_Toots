@@ -1,5 +1,6 @@
 import ItemList from "../ItemList/ItemList";
 import Slider from "../Slider/Slider";
+import "./itemlistcontainer.css";
 const ItemListContainer = (props) => {
   return (
     <div className="list-conteiner">
