@@ -27,7 +27,7 @@ const ItemDetail = ({
   };
 
   const onFinishBuy = () => {
-    console.log("Compra terminada");
+    console.log(`Compra terminada. Agregaste ${count} productos al carrito`);
   };
   return (
     <>
@@ -53,9 +53,7 @@ const ItemDetail = ({
               <br />
               <h5>Stock Disponible: {stock}</h5>
               <div className="counter">
-                {itemCountVisible && (
-                  <ItemCount productStock={stock} onAdd={onAdd} />
-                )}
+                {itemCountVisible && <ItemCount stock={stock} onAdd={onAdd} />}
                 {buyButtonsVisible && (
                   <>
                     <button
@@ -67,9 +65,11 @@ const ItemDetail = ({
                   </>
                 )}
                 {!buyButtonsVisible && (
-                  <button className="buy-button" onClick={onFinishBuy}>
-                    Terminar compra
-                  </button>
+                  <Link to="/Cart">
+                    <button className="buy-button" onClick={onFinishBuy}>
+                      Terminar compra
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>

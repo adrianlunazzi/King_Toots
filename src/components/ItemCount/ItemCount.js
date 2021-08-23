@@ -7,9 +7,8 @@ export default function ItemCount({
   onAdd = () => {},
 }) {
   const [count, setCount] = useState(defaultValue);
-
   const increment = () => {
-    if (count > 0) {
+    if (count < stock) {
       setCount(count + 1);
     } else {
       setCount(count);
