@@ -4,7 +4,7 @@ import "./cartwidget.css";
 const CartWidget = () => {
   return (
     <div className="cart-icon">
-      <a href="/">
+      <a href="/Cart">
         <i className="fab fa-opencart"></i>
       </a>
     </div>

@@ -1,5 +1,5 @@
-import React from "react";
-
+import { React, useState } from "react";
+import ItemCount from "../../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./itemdetail.css";
 
@@ -11,8 +11,24 @@ const ItemDetail = ({
   price,
   id,
   category,
-  description,
+  stock,
 }) => {
+  const [itemCountVisible, setItemCountVisible] = useState(true);
+  const [buyButtonsVisible, setBuyButtonsVisible] = useState(true);
+  const [count, setCount] = useState(0);
+
+  const onAdd = (count) => {
+    setCount(count);
+  };
+
+  const onAddToCart = () => {
+    setItemCountVisible(false);
+    setBuyButtonsVisible(false);
+  };
+
+  const onFinishBuy = () => {
+    console.log("Compra terminada");
+  };
   return (
     <>
       <div className="detail-container-list">
@@ -34,7 +50,28 @@ const ItemDetail = ({
               </h4>
               <p>Ver Promociones Bancarias</p>
               <br />
-              <p>{description}</p>
+              <br />
+              <h5>Stock Disponible: {stock}</h5>
+              <div className="counter">
+                {itemCountVisible && (
+                  <ItemCount productStock={stock} onAdd={onAdd} />
+                )}
+                {buyButtonsVisible && (
+                  <>
+                    <button
+                      className="buy-button"
+                      onClick={onAddToCart}
+                      count={count}>
+                      Agregar al carrito {count} Unidades
+                    </button>
+                  </>
+                )}
+                {!buyButtonsVisible && (
+                  <button className="buy-button" onClick={onFinishBuy}>
+                    Terminar compra
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>

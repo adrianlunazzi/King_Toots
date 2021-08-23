@@ -43,6 +43,19 @@
     color: #354C8A;
 }
 
+.buy-button{
+    border: none;
+    font-size: 10px;
+    background-color:rgb(14, 31, 27); ;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    width: 170px;
+    height: 30px;
+    border-radius: 5px;
+}
 @media  screen and (max-width: 768px){
     .details-container{
         grid-template-columns: repeat(1, 1fr);
