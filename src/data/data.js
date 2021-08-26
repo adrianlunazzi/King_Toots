@@ -142,7 +142,7 @@ const data = [
   {
     id: 14,
     Product_type: "Saxo Tenor",
-    Brand: "Yanaha",
+    Brand: "Yamaha",
     Model: "YTS 280",
     Price: 410999,
     Stock: 3,

@@ -52,7 +52,7 @@ const ItemList = () => {
             product_type={producto.Product_type}
             brand={producto.Brand}
             model={producto.Model}
-            price={"Precio $" + producto.Price}
+            price={producto.Price}
             img_product={producto.Img_product}
             stock={producto.Stock}
             category={producto.Category}

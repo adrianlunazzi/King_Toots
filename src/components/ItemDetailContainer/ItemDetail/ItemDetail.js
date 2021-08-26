@@ -1,7 +1,8 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import ItemCount from "../../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./itemdetail.css";
+import { CartContext } from "../../contexts/CartContext";
 
 const ItemDetail = ({
   img_product,
@@ -15,6 +16,7 @@ const ItemDetail = ({
 }) => {
   const [itemCountVisible, setItemCountVisible] = useState(true);
   const [buyButtonsVisible, setBuyButtonsVisible] = useState(true);
+  const [cart, setCart] = useContext(CartContext);
   const [count, setCount] = useState(0);
 
   const onAdd = (count) => {
@@ -24,6 +26,8 @@ const ItemDetail = ({
   const onAddToCart = () => {
     setItemCountVisible(false);
     setBuyButtonsVisible(false);
+    const products = { id, img_product, product_type, brand, model, price };
+    setCart((curr) => [...curr, products]);
   };
 
   const onFinishBuy = () => {
