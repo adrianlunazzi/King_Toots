@@ -16,8 +16,9 @@ const ItemDetail = ({
 }) => {
   const [itemCountVisible, setItemCountVisible] = useState(true);
   const [buyButtonsVisible, setBuyButtonsVisible] = useState(true);
-  const [cart, setCart] = useContext(CartContext);
   const [count, setCount] = useState(0);
+
+  const [cart, setCart] = useContext(CartContext);
 
   const onAdd = (count) => {
     setCount(count);
@@ -26,8 +27,16 @@ const ItemDetail = ({
   const onAddToCart = () => {
     setItemCountVisible(false);
     setBuyButtonsVisible(false);
-    const products = { id, img_product, product_type, brand, model, price };
-    setCart((curr) => [...curr, products]);
+    const products = {
+      id,
+      img_product,
+      product_type,
+      brand,
+      model,
+      price,
+      count,
+    };
+    setCart((acc) => [...acc, products]);
   };
 
   const onFinishBuy = () => {
@@ -47,7 +56,7 @@ const ItemDetail = ({
                 {brand} - {model}
               </h3>
               <h2>
-                <strong>{price}</strong>
+                <strong>Precio ${price}</strong>
               </h2>
               <h4>
                 <i className="fab fa-cc-visa"></i>Hasta 12 cuotas sin interés

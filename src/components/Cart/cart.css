@@ -5,9 +5,30 @@
     border: 1px solid #000;
 }
 
+.btn-deleteAll-container{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    align-items: flex-end
+}
+.delete-all{
+    color: rgb(255, 255, 255);
+    background-color: red;
+    border: 0;
+    margin: auto;
+    width: 10%;
+    height: 200%;
+    align-items: flex-end
+}
+.delete-all:hover{
+    background-color: rgb(119, 2, 2);
+  
+}
+
 .items-list li{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     align-items: center;
     padding: 10px;
     margin: 10px 0 ;
@@ -47,6 +68,7 @@
     width: 90%;
     height: 120px;
     background-color: rgba(112, 112, 112, 0.377);
+    margin-bottom: 40px;
 }
 
 .total{

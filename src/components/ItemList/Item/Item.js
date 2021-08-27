@@ -25,7 +25,7 @@ const Item = ({
               </li>
               <li className="list-group-item">{model}</li>
               <li className="list-group-item-price">
-                <strong>{price}</strong>
+                <strong>${price}</strong>
               </li>
               <li className="list-group-item-price"></li>
             </ul>
