@@ -8,7 +8,6 @@ const Item = ({
   brand,
   model,
   price,
-
   id,
   category,
 }) => {

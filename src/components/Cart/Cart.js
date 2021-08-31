@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "./cart.css";
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, removeAll] = useContext(CartContext);
 
   console.log("esto es lo que trae cart", cart);
   const totalItems = cart.reduce((acc, curr) => acc + curr.count, 0);
@@ -33,7 +33,9 @@ const Cart = () => {
         </div>
       </div>
       <div className="btn-deleteAll-container">
-        <button className="delete-all">Vaciar Carrito</button>
+        <button className="delete-all" onClick={removeAll}>
+          Vaciar Carrito
+        </button>
       </div>
       <br />
       <br />
