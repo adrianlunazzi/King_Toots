@@ -18,7 +18,7 @@ const ItemDetail = ({
   const [buyButtonsVisible, setBuyButtonsVisible] = useState(true);
   const [count, setCount] = useState(0);
 
-  const [cart, setCart] = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const onAdd = (count) => {
     setCount(count);
@@ -27,16 +27,17 @@ const ItemDetail = ({
   const onAddToCart = () => {
     setItemCountVisible(false);
     setBuyButtonsVisible(false);
-    const products = {
-      id,
+    addItem(
       img_product,
       product_type,
-      brand,
       model,
+      brand,
       price,
-      count,
-    };
-    setCart((acc) => [...acc, products]);
+      id,
+      category,
+      stock,
+      count
+    );
   };
 
   const onFinishBuy = () => {

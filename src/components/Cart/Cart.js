@@ -2,35 +2,36 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "./cart.css";
 const Cart = () => {
-  const [cart, setCart, removeAll] = useContext(CartContext);
-
+  const { cart, removeAll, removeItem, itemInCart } = useContext(CartContext);
   console.log("esto es lo que trae cart", cart);
+  const totalItemPrice = cart.reduce((acc, curr) => curr.count * curr.price, 0);
   const totalItems = cart.reduce((acc, curr) => acc + curr.count, 0);
-  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
-  const items = cart.map((item) => (
+  const subTotal = cart.reduce((acc, curr) => acc + curr.price, 0);
+  const Total = subTotal + totalItemPrice;
+
+  console.log("este es el item en el carrito", itemInCart);
+
+  const product = cart.map((item) => (
     <ul>
       <li>
-        <div className="cart-product-image"> {item.img_product}</div>
-        <div>{item.product_type}</div>
-        <div> Q:{item.count}</div>
-        <div>{item.brand} </div>
-        <div className="list-price">${item.price}</div>
-        <button className="delete-btn-style">
+        {item.img_product}
+        {item.product_type}
+        Q:{item.count}
+        {item.brand}${item.price}
+        <button className="delete-btn-style" onClick={removeItem}>
           <i className="fas fa-trash-alt" alt="Eliminar"></i>
         </button>
       </li>
     </ul>
   ));
 
-  console.log("este es el total de elementos en el carrito", totalItems);
   return (
     <>
       <h2>Mi compra</h2>
 
       <div className="cart-container">
-        <div className="items-list">
-          <h5>{items}</h5>
-        </div>
+        <div className="items-list"></div>
+        <h5>{product}</h5>
       </div>
       <div className="btn-deleteAll-container">
         <button className="delete-all" onClick={removeAll}>
@@ -43,8 +44,8 @@ const Cart = () => {
         <div></div>
         <div></div>
         <div className="total">
-          <h6>Items en el carrito: {totalItems}</h6>
-          <h6>Total a pagar: ${totalPrice}</h6>
+          <h6>Items en el carrito: {totalItems} </h6>
+          <h6>Total a pagar: $ {Total}</h6>
         </div>
       </div>
     </>
