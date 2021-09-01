@@ -8,6 +8,12 @@ const CartFunction = ({ children }) => {
   const removeAll = () => {
     setCart([]);
   };
+
+  const removeItem = (id) => {
+    const remove = cart.filter((item) => item.id != id);
+    setCart(remove);
+  };
+
   const isInCart = (id) => {
     const itemInCart = cart.find((item) => item.id == id);
     return itemInCart;
@@ -24,6 +30,11 @@ const CartFunction = ({ children }) => {
     stock,
     count
   ) => {
+    if (isInCart(id)) {
+      console.log("estoy en el carrito");
+    } else {
+      console.log("no estoy en el carrito");
+    }
     setCart([
       ...cart,
       {
@@ -47,6 +58,7 @@ const CartFunction = ({ children }) => {
         removeAll,
         addItem,
         isInCart,
+        removeItem,
       }}>
       {children}
     </CartContext.Provider>

@@ -2,14 +2,11 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "./cart.css";
 const Cart = () => {
-  const { cart, removeAll, removeItem, itemInCart } = useContext(CartContext);
-  console.log("esto es lo que trae cart", cart);
+  const { cart, removeAll, removeItem, isInCart } = useContext(CartContext);
   const totalItemPrice = cart.reduce((acc, curr) => curr.count * curr.price, 0);
   const totalItems = cart.reduce((acc, curr) => acc + curr.count, 0);
   const subTotal = cart.reduce((acc, curr) => acc + curr.price, 0);
   const Total = subTotal + totalItemPrice;
-
-  console.log("este es el item en el carrito", itemInCart);
 
   const product = cart.map((item) => (
     <ul>
