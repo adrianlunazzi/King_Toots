@@ -1,6 +1,6 @@
 import ItemDetail from "./ItemDetail/ItemDetail";
 import React, { useState, useEffect } from "react";
-import data from "../../data/data";
+import { getFirestore } from "../../firebase/index";
 
 import { useParams } from "react-router-dom";
 
@@ -10,30 +10,24 @@ const ItemDetailContainer = () => {
   const { id, Category } = useParams();
 
   useEffect(() => {
-    const productos = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(data);
-        }, 2000);
+    setLoading(true);
+    const db = getFirestore();
+    const itemCollection = db.collections("data");
+    itemCollection
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.size === 0) {
+          console.log("No results");
+        }
+        setProducto(querySnapshot.docs.map((doc) => doc.data()));
+      })
+      .catch((error) => {
+        console.log("Error searching items", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-    };
-    productos().then((data) => {
-      if (id != null) {
-        const productDetails = data.filter(
-          (productDetail) => productDetail.id == id
-        );
-        setProducto(productDetails);
-        setLoading(false);
-      } else {
-        setProducto(data);
-        setLoading(false);
-      }
-
-      const producto = data.find((producto) => producto.id == id);
-      setProducto(producto);
-      setLoading(false);
-    });
-  }, [id, Category]);
+  }, []);
 
   return (
     <>
