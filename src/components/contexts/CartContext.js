@@ -16,7 +16,7 @@ const CartFunction = ({ children }) => {
 
   const isInCart = (id) => {
     const itemInCart = cart.find((item) => item.id == id);
-    return itemInCart;
+    console.log("esto es funcion", itemInCart);
   };
 
   const addItem = (

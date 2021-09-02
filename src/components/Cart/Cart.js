@@ -2,11 +2,14 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "./cart.css";
 const Cart = () => {
-  const { cart, removeAll, removeItem, isInCart } = useContext(CartContext);
+  const { cart, removeAll, removeItem, isInCart, remove } =
+    useContext(CartContext);
   const totalItemPrice = cart.reduce((acc, curr) => curr.count * curr.price, 0);
+  console.log(totalItemPrice);
   const totalItems = cart.reduce((acc, curr) => acc + curr.count, 0);
   const subTotal = cart.reduce((acc, curr) => acc + curr.price, 0);
-  const Total = subTotal + totalItemPrice;
+  console.log(subTotal);
+  const total = subTotal + totalItemPrice;
 
   const product = cart.map((item) => (
     <ul>
@@ -15,7 +18,9 @@ const Cart = () => {
         {item.product_type}
         Q:{item.count}
         {item.brand}${item.price}
-        <button className="delete-btn-style" onClick={removeItem}>
+        <button
+          className="delete-btn-style"
+          onClick={() => removeItem(item.id)}>
           <i className="fas fa-trash-alt" alt="Eliminar"></i>
         </button>
       </li>
@@ -42,7 +47,7 @@ const Cart = () => {
         <div></div>
         <div className="total">
           <h6>Items en el carrito: {totalItems} </h6>
-          <h6>Total a pagar: $ {Total}</h6>
+          <h6>Total a pagar: $ {subTotal}</h6>
         </div>
       </div>
     </>
