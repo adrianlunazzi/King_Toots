@@ -24,10 +24,10 @@ const ItemDetail = ({
     setCount(count);
   };
 
-  const onAddToCart = () => {
+  const onAddToCart = (props) => {
     setItemCountVisible(false);
     setBuyButtonsVisible(false);
-    addItem(
+    addItem({
       img_product,
       product_type,
       model,
@@ -36,8 +36,9 @@ const ItemDetail = ({
       id,
       category,
       stock,
-      count
-    );
+      count,
+    });
+    console.log(`Agregaste ${count} al carrito`);
   };
 
   const onFinishBuy = () => {

@@ -2,54 +2,50 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "./cart.css";
 const Cart = () => {
-  const { cart, removeAll, removeItem, isInCart, remove } =
-    useContext(CartContext);
-  const totalItemPrice = cart.reduce((acc, curr) => curr.count * curr.price, 0);
-  console.log(totalItemPrice);
-  const totalItems = cart.reduce((acc, curr) => acc + curr.count, 0);
-  const subTotal = cart.reduce((acc, curr) => acc + curr.price, 0);
-  console.log(subTotal);
-  const total = subTotal + totalItemPrice;
+  const { cart, deleteAll, deleteItem } = useContext(CartContext);
+  const totalCart2 = cart.map((item) => item.price * item.quantity);
+  const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
-  const product = cart.map((item) => (
-    <ul>
-      <li>
-        {item.img_product}
-        {item.product_type}
-        Q:{item.count}
-        {item.brand}${item.price}
-        <button
-          className="delete-btn-style"
-          onClick={() => removeItem(item.id)}>
-          <i className="fas fa-trash-alt" alt="Eliminar"></i>
-        </button>
-      </li>
-    </ul>
-  ));
-
+  if (cart.length === 0) {
+    return (
+      <div className="empty">
+        <h2>No hay productos en el carrito</h2>
+        <img src="/images/carrito_vacio.png" width="500px" alt="" />
+      </div>
+    );
+  }
   return (
     <>
-      <h2>Mi compra</h2>
+      <h3 className="cart-title">Mi Compra</h3>
+      <br />
+      {cart.map((item) => (
+        <>
+          <div className="items-cart-conteiner">
+            {item.img}
+            <div>{item.product_type}</div>
+            <div>{item.brand}</div>
+            <div>{item.model}</div>
+            <div>${item.price}</div>
+            <div>
+              Cantidad:
+              {item.quantity}
+            </div>
+            <div>Subtotal: {item.price * item.quantity}</div>
+            <button
+              className="cart-delete-btn"
+              onClick={() => deleteItem(item.id)}>
+              <i className="fas fa-times"></i>
+            </button>
+          </div>
+        </>
+      ))}
 
-      <div className="cart-container">
-        <div className="items-list"></div>
-        <h5>{product}</h5>
-      </div>
-      <div className="btn-deleteAll-container">
-        <button className="delete-all" onClick={removeAll}>
-          Vaciar Carrito
-        </button>
-      </div>
-      <br />
-      <br />
       <div className="total-container">
-        <div></div>
-        <div></div>
-        <div className="total">
-          <h6>Items en el carrito: {totalItems} </h6>
-          <h6>Total a pagar: $ {subTotal}</h6>
-        </div>
+        <h4 className="total-text">El total de tu compra es: ${totalCart}</h4>
       </div>
+      <button className="btn-delete-all" onClick={() => deleteAll()}>
+        <i className="fas fa-trash-alt"></i>Vaciar Carrito
+      </button>
     </>
   );
 };

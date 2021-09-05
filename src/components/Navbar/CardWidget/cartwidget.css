@@ -2,12 +2,16 @@
     width: 50px;
     margin: auto;
 }
- .fa-opencart{
+ .fa-cart-arrow-down{
     color: white;
     font-size: 2rem;
 
     }
-   .fa-opencart:hover{
-     color: #354C8A
+   .fa-cart-arrow-down{
+     color: #9caedf
 
     }    
+    .fa-cart-arrow-down:hover{
+      color: #88d4c4
+ 
+     } 
