@@ -51,7 +51,40 @@
     border: 0;
     margin: auto;
 }
+
+.btn-add-more{
+    width: 50%;
+    height: 50px;
+    color: white;
+    background-color: rgb(0, 140, 255);
+    border: 0;
+    margin: auto;
+}
+.btn-add-more:hover{
+    background-color: rgb(0, 62, 112);
+}
+
+.btn-finish{
+    width: 50%;
+    height: 50px;
+    color: white;
+    background-color: rgb(6, 151, 38);
+    border: 0;
+    margin: auto;
+}
+.btn-finish:hover{
+    background-color: rgb(5, 100, 26);    
+}
 .fa-trash-alt{
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.fa-file-invoice-dollar{
+    font-size: 30px;
+    margin-right: 30px;
+}
+.fa-cart-plus{
     font-size: 30px;
     margin-right: 30px;
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 import "./cart.css";
 const Cart = () => {
   const { cart, deleteAll, deleteItem } = useContext(CartContext);
@@ -10,6 +11,9 @@ const Cart = () => {
     return (
       <div className="empty">
         <h2>No hay productos en el carrito</h2>
+        <Link to="/">
+          <h3>Empezar a comprar</h3>
+        </Link>
         <img src="/images/carrito_vacio.png" width="500px" alt="" />
       </div>
     );
@@ -45,6 +49,14 @@ const Cart = () => {
       </div>
       <button className="btn-delete-all" onClick={() => deleteAll()}>
         <i className="fas fa-trash-alt"></i>Vaciar Carrito
+      </button>
+      <Link to="/">
+        <button className="btn-add-more">
+          <i class="fas fa-cart-plus"></i>Seguir Comprando
+        </button>
+      </Link>
+      <button className="btn-finish">
+        <i class="fas fa-file-invoice-dollar"></i>Finalizar Compra
       </button>
     </>
   );
