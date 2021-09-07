@@ -13,8 +13,7 @@
 .product-container a{
     text-decoration: none;
 }
-
-.product-image img{
+.product-image{
     width: 70%;
     height: 100%;
 }

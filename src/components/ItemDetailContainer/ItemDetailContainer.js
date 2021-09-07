@@ -1,39 +1,22 @@
 import ItemDetail from "./ItemDetail/ItemDetail";
 import React, { useState, useEffect } from "react";
-import data from "../../data/data";
+import { productDetail } from "../../firebase/index";
 
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [products, setProducts] = useState([]);
+  const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id, Category } = useParams();
 
   useEffect(() => {
-    const productos = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(data);
-        }, 2000);
-      });
-    };
-    products().then((data) => {
-      if (id != null) {
-        const productDetails = data.filter(
-          (productDetail) => productDetail.id == id
-        );
-        setProducts(productDetails);
-        setLoading(false);
-      } else {
-        setProducts(data);
-        setLoading(false);
-      }
-
-      const producto = data.find((producto) => producto.id == id);
-      setProducts(products);
+    const item = productDetail(id);
+    item.then((data) => {
+      setProducto(data.data());
       setLoading(false);
     });
   }, [id, Category]);
+  console.log("esto es el ID", id);
 
   return (
     <>
@@ -50,15 +33,16 @@ const ItemDetailContainer = () => {
         </h6>
       ) : (
         <ItemDetail
-          key={products.id}
-          id={products.id}
-          product_type={products.Product_type}
-          model={products.Model}
-          brand={products.Brand}
-          price={products.Price}
-          img_product={products.Img_product}
-          stock={products.Stock}
-          description={products.description}
+          id={id}
+          product_type={producto.Product_type}
+          model={producto.Model}
+          brand={producto.Brand}
+          price={producto.Price}
+          img_product={producto.Img_product}
+          stock={producto.Stock}
+          description={producto.description}
+          category={producto.Category}
+          key={producto.id}
         />
       )}
     </>

@@ -8,7 +8,8 @@ const CartFunction = ({ children }) => {
   const [units, setUnits] = useState(0);
 
   const addItem = (product) => {
-    const isInCart = cart.find((item) => item.id === product.id);
+    const isInCart = cart.find((item) => item.id == product.id);
+
     if (!isInCart) {
       setCart([
         ...cart,
@@ -20,7 +21,7 @@ const CartFunction = ({ children }) => {
           img: product.img_product,
           model: product.model,
           quantity: product.count,
-          subtotal: product.price * product.quantity,
+          subtotal: product.price * product.count,
           total: product.count * product.price,
         },
       ]);
@@ -28,7 +29,7 @@ const CartFunction = ({ children }) => {
       setTotal(product.price);
     } else {
       const newCart = cart.map((item) => {
-        if (item.id === product.id) {
+        if (item.id == product.id) {
           item.quantity += product.count;
         }
         return item;

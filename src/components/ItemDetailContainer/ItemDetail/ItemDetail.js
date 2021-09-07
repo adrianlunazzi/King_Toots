@@ -28,29 +28,26 @@ const ItemDetail = ({
     setItemCountVisible(false);
     setBuyButtonsVisible(false);
     addItem({
+      id,
       img_product,
       product_type,
       model,
       brand,
       price,
-      id,
       category,
       stock,
       count,
     });
-    console.log(`Agregaste ${count} al carrito`);
   };
 
-  const onFinishBuy = () => {
-    console.log(`Compra terminada. Agregaste ${count} productos al carrito`);
-  };
+  const onFinishBuy = () => {};
   return (
     <>
       <div className="detail-container-list">
         <Link to={`/${category}/${id}`}></Link>
         <div className="product-Container">
           <div className="details-container">
-            <div className="product-image">{img_product}</div>
+            <img src={img_product} alt="" className="product-image" />
             <div className="product-description">
               <h3>
                 {product_type}

@@ -15,7 +15,7 @@ const Item = ({
     <>
       <div className="card">
         <Link to={`/${category}/${id}`}>
-          <div className="card-image">{img_product}</div>
+          <img src={img_product} className="card-image" alt="" />
           <div className="card-body">
             <ul className="list-group list-group-flush">
               <h4 className="card-title">{product_type}</h4>

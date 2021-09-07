@@ -1,6 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { doc, getFirestore } from "firebase/firestore";
-import { collection, getDocs, where, query, getDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  where,
+  query,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmT6R2ck5Zxxgd5wtD01e_cgY0g23c60w",
@@ -17,4 +24,17 @@ const db = getFirestore();
 export const allItems = () => {
   const query = getDocs(collection(db, "products"));
   return query;
+};
+
+export const allCategories = (Category) => {
+  const q = collection(db, "products");
+  const q2 = query(q, where("Category", "==", Category));
+  const q3 = getDocs(q2);
+  return q3;
+};
+
+export const productDetail = (id) => {
+  const q = doc(db, "products", id);
+  const q2 = getDoc(q);
+  return q2;
 };

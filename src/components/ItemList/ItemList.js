@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { allItems } from "../../firebase/index";
+import { allItems, allCategories } from "../../firebase/index";
 import Item from "./Item/Item";
 import "./itemlist.css";
 
@@ -11,13 +11,9 @@ const ItemList = () => {
 
   useEffect(() => {
     if (Category != null) {
-    } else {
-      const items = allItems();
-      console.log("soy items", items);
+      const items = allCategories(Category);
       items.then((data) => {
-        console.log("soy data", data);
         const itemsAux = [];
-        console.log("soy itemsAux", itemsAux);
         data.forEach((item) => {
           itemsAux.push({
             id: item.id,
@@ -29,11 +25,28 @@ const ItemList = () => {
             Category: item.data().Category,
             Img_product: item.data().Img_product,
           });
-          setProducts(itemsAux);
-          setLoading(false);
         });
-        console.log("esto trae products", products);
-        console.log("esto trae loadings", loading);
+        setProducts(itemsAux);
+        setLoading(false);
+      });
+    } else {
+      const items = allItems();
+      items.then((data) => {
+        const itemsAux = [];
+        data.forEach((item) => {
+          itemsAux.push({
+            id: item.id,
+            Product_type: item.data().Product_type,
+            Brand: item.data().Brand,
+            Model: item.data().Model,
+            Price: item.data().Price,
+            Stock: item.data().Stock,
+            Category: item.data().Category,
+            Img_product: item.data().Img_product,
+          });
+        });
+        setProducts(itemsAux);
+        setLoading(false);
       });
     }
   }, [Category]);

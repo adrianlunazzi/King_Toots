@@ -2,7 +2,9 @@
     text-decoration: none;
 }
 .card{
-    margin: .4rem
+    margin: .4rem;
+    width: 270px;
+    height: 500px;
     
 }
 .card-title{
@@ -16,12 +18,12 @@
     color: red;
     list-style:none;
 }
-.card-image img{
+.card-image{
     display: flex;
     align-items: center;
     margin:20px auto;
-    width: 17vw;
-    height: 85%;
+    width: 150px;
+    height: 150px;
     
 }
 .button a{

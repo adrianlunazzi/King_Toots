@@ -12,7 +12,13 @@ const Menu = () => {
       <nav className="menu">
         <label className="logoConteiner">
           <Link to="/">
-            <img src="/images/logo.png" width="74px" height="54" alt="" />
+            <img
+              src="/images/logo.png"
+              width="74px"
+              height="54"
+              alt=""
+              className="logo-img"
+            />
           </Link>
           <div className="logo">
             <Link to="/">
