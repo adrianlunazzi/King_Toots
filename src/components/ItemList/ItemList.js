@@ -1,35 +1,41 @@
-import data from "../../data/data";
-import Item from "./Item/Item";
-import "./itemlist.css";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { allItems } from "../../firebase/index";
+import Item from "./Item/Item";
+import "./itemlist.css";
 
 const ItemList = () => {
   const { Category } = useParams();
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const productos = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(data);
-        }, 2000);
+    if (Category != null) {
+    } else {
+      const items = allItems();
+      console.log("soy items", items);
+      items.then((data) => {
+        console.log("soy data", data);
+        const itemsAux = [];
+        console.log("soy itemsAux", itemsAux);
+        data.forEach((item) => {
+          itemsAux.push({
+            id: item.id,
+            Product_type: item.data().Product_type,
+            Brand: item.data().Brand,
+            Model: item.data().Model,
+            Price: item.data().Price,
+            Stock: item.data().Stock,
+            Category: item.data().Category,
+            Img_product: item.data().Img_product,
+          });
+          setProducts(itemsAux);
+          setLoading(false);
+        });
+        console.log("esto trae products", products);
+        console.log("esto trae loadings", loading);
       });
-    };
-
-    productos().then((items) => {
-      if (Category != null) {
-        const productCategories = items.filter(
-          (producto) => producto.Category === Category
-        );
-        setProductos(productCategories);
-        setLoading(false);
-      } else {
-        setProductos(items);
-        setLoading(false);
-      }
-    });
+    }
   }, [Category]);
 
   return (
@@ -46,16 +52,16 @@ const ItemList = () => {
           </div>
         </h6>
       ) : (
-        productos.map((producto) => (
+        products.map((producto) => (
           <Item
             key={producto.id}
             product_type={producto.Product_type}
             brand={producto.Brand}
             model={producto.Model}
             price={producto.Price}
-            img_product={producto.Img_product}
             stock={producto.Stock}
             category={producto.Category}
+            img_product={producto.Img_product}
             id={producto.id}
           />
         ))
@@ -63,4 +69,5 @@ const ItemList = () => {
     </div>
   );
 };
+
 export default ItemList;

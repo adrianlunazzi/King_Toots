@@ -5,7 +5,7 @@ import data from "../../data/data";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [products, setProducts] = useState([]);
+  const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id, Category } = useParams();
 
@@ -17,20 +17,20 @@ const ItemDetailContainer = () => {
         }, 2000);
       });
     };
-    products().then((data) => {
+    productos().then((data) => {
       if (id != null) {
         const productDetails = data.filter(
           (productDetail) => productDetail.id == id
         );
-        setProducts(productDetails);
+        setProducto(productDetails);
         setLoading(false);
       } else {
-        setProducts(data);
+        setProducto(data);
         setLoading(false);
       }
 
       const producto = data.find((producto) => producto.id == id);
-      setProducts(products);
+      setProducto(producto);
       setLoading(false);
     });
   }, [id, Category]);
@@ -50,15 +50,15 @@ const ItemDetailContainer = () => {
         </h6>
       ) : (
         <ItemDetail
-          key={products.id}
-          id={products.id}
-          product_type={products.Product_type}
-          model={products.Model}
-          brand={products.Brand}
-          price={products.Price}
-          img_product={products.Img_product}
-          stock={products.Stock}
-          description={products.description}
+          key={producto.id}
+          id={producto.id}
+          product_type={producto.Product_type}
+          model={producto.Model}
+          brand={producto.Brand}
+          price={producto.Price}
+          img_product={producto.Img_product}
+          stock={producto.Stock}
+          description={producto.description}
         />
       )}
     </>
