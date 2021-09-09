@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const CartContext = React.createContext();
 
 const CartFunction = ({ children }) => {
+  const [order, setOrder] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [units, setUnits] = useState(0);
@@ -45,9 +46,22 @@ const CartFunction = ({ children }) => {
     setCart(remove);
   };
 
+  const orderId = (id) => {
+    setOrder(orderId);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, units, total, addItem, deleteAll, deleteItem }}>
+      value={{
+        cart,
+        units,
+        total,
+        order,
+        addItem,
+        deleteAll,
+        deleteItem,
+        orderId,
+      }}>
       {children}
     </CartContext.Provider>
   );

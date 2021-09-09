@@ -1,11 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import { addOrder } from "../../firebase/index";
 import "./cart.css";
+
 const Cart = () => {
   const { cart, deleteAll, deleteItem } = useContext(CartContext);
+
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
+  const date = new Date().toLocaleString();
+  const buyer = {
+    Nombre: "Usuario",
+    Phone: "01144444444",
+    Email: "a@b.com.ar",
+  };
+  const newOrder = () => {
+    const orderToCart = addOrder(cart, totalCart, date, buyer);
+    orderToCart.then((data) => {
+      cart.orderId(data.id);
+    });
+  };
 
   if (cart.length === 0) {
     return (
@@ -55,9 +70,16 @@ const Cart = () => {
             <i className="fas fa-cart-plus"></i>Seguir Comprando
           </button>
         </Link>
-        <button className="btn-finish">
-          <i className="fas fa-file-invoice-dollar"></i>Finalizar Compra
-        </button>
+        <Link to="/Thankyou">
+          <button className="btn-finish">
+            <i
+              className="fas fa-file-invoice-dollar"
+              onClick={() => {
+                newOrder();
+              }}></i>
+            Finalizar Compra
+          </button>
+        </Link>
       </>
     );
   }

@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
       setLoading(false);
     });
   }, [id, Category]);
-  console.log("esto es el ID", id);
 
   return (
     <>

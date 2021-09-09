@@ -3,8 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemList from "./components/ItemList/ItemList";
 import ItemListContainer from "./components/ItemListConteiner/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./components/Footer/Footer";
+import ThankyouPage from "./components/Thanks/ThankyouPage";
 import Cart from "./components/Cart/Cart";
-
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -30,6 +31,8 @@ function App() {
           <Route path="/Cart" exact>
             <Cart />
           </Route>
+          <Route exact path="/Thankyou" component={ThankyouPage} />
+          <Footer />
         </CartFunction>
       </BrowserRouter>
     </div>

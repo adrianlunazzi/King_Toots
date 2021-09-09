@@ -7,6 +7,7 @@ import {
   query,
   doc,
   getDoc,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -32,9 +33,18 @@ export const allCategories = (Category) => {
   const q3 = getDocs(q2);
   return q3;
 };
-
 export const productDetail = (id) => {
   const q = doc(db, "products", id);
   const q2 = getDoc(q);
   return q2;
+};
+
+export const addOrder = (cart, totalCart, buyer, date) => {
+  const orderTotal = addDoc(collection(db, "orders"), {
+    buyer: buyer,
+    cart: cart,
+    date: date,
+    totalcart: totalCart,
+  });
+  return orderTotal;
 };
