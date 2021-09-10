@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { addOrder } from "../../firebase/index";
 
 const CartContext = React.createContext();
 
 const CartFunction = ({ children }) => {
-  const [order, setOrder] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [units, setUnits] = useState(0);
+
+  const totalCart2 = cart.map((item) => item.price * item.quantity);
+  const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
   const addItem = (product) => {
     const isInCart = cart.find((item) => item.id == product.id);
@@ -46,8 +49,18 @@ const CartFunction = ({ children }) => {
     setCart(remove);
   };
 
-  const orderId = (id) => {
-    setOrder(orderId);
+  const date = new Date().toLocaleString();
+  const buyer = {
+    Nombre: "Usuario",
+    Phone: "01144444444",
+    Email: "a@b.com.ar",
+  };
+  const newOrder = () => {
+    const orderToCart = addOrder(cart, totalCart, date, buyer);
+    orderToCart.then((data) => {
+      const cartToId = data.id;
+      console.log(cartToId);
+    });
   };
 
   return (
@@ -56,11 +69,10 @@ const CartFunction = ({ children }) => {
         cart,
         units,
         total,
-        order,
         addItem,
         deleteAll,
         deleteItem,
-        orderId,
+        newOrder,
       }}>
       {children}
     </CartContext.Provider>
