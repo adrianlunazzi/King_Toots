@@ -7,6 +7,7 @@ const CartFunction = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [units, setUnits] = useState(0);
+  const [id, setId] = useState("");
 
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
@@ -49,17 +50,16 @@ const CartFunction = ({ children }) => {
     setCart(remove);
   };
 
-  const date = new Date().toLocaleString();
   const buyer = {
     Nombre: "Usuario",
     Phone: "01144444444",
     Email: "a@b.com.ar",
   };
+  const date = new Date().toLocaleString();
   const newOrder = () => {
     const orderToCart = addOrder(cart, totalCart, date, buyer);
     orderToCart.then((data) => {
-      const cartToId = data.id;
-      console.log(cartToId);
+      setId(data.id);
     });
   };
 
@@ -73,6 +73,9 @@ const CartFunction = ({ children }) => {
         deleteAll,
         deleteItem,
         newOrder,
+        buyer,
+        id,
+        setId,
       }}>
       {children}
     </CartContext.Provider>
