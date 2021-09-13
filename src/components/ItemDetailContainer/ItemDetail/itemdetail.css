@@ -16,6 +16,7 @@
 .product-image{
     width: 70%;
     height: 100%;
+    margin: auto;
 }
 
 .product-description{
@@ -32,8 +33,9 @@
 .product-description h4{
     font-size: 20px;
 }
-.itemcount{
+.counter{
     margin: auto;
+    width: 50%;
 }
 
 .fa-cc-visa {

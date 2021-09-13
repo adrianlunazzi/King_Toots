@@ -1,9 +1,18 @@
-King Toots es un ecommerce dedicado a la venta de instrumentos musicales. 
-El objetivo es poder armar un ecommerce, con manejo de stocks y diversas categorias.
+# Curso REACTJS- CoderHouse
+# 🖥️ Proyecto: King Toots
 
-Desarrollado en React. 
-Para los estilos, en algunos casos se utilizo boostrap para algunos efectos puntuales.
+King Toots es un sitio ecommerce dedicado a la venta de instrumentos musicales. 
+El mismo fue desarrollado con React JS y consume una base de datos en Firebase.
+Para el desarrollo de este sitio se aplicaron los conceptos aprendidos en el curso de uso de Hooks (useState, useEffect, Context, Tecnicas de Renderizacion condicional, React Router Dom y Eventos)
+
+ Para algunas cuestiones puntuales de estilos se utilizo Boostrap, pero en su mayoria se uso css nativo.
  
+#  🚀 Para inicializar el proyecto: `npm start` 
+#  🩺 Para inicializar el modo test  `npm test` 
 
-Para inicializar el proyecto: `npm start`
+# 🧰 Dependencias instaladas:
+
+-- react
+-- react-router-dom
+-- firebase
 

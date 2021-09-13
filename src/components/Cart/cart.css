@@ -98,9 +98,9 @@
 .empty img{
         width: 200px;
         height: 170px;
-        margin-top: 4rem;
-   
+        margin-top: 4rem;   
 }
+
 @media  screen and (max-width: 768px){
     .items-cart-conteiner{
     display: block;

@@ -4,7 +4,7 @@ import { CartContext } from "../contexts/CartContext";
 import "../Thanks/thankyoupage.css";
 
 const ThankyouPage = () => {
-  const { cart, buyer, id } = useContext(CartContext);
+  const { cart, id } = useContext(CartContext);
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
