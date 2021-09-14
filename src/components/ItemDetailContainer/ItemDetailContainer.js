@@ -35,11 +35,11 @@ const ItemDetailContainer = () => {
           id={id}
           product_type={producto.Product_type}
           model={producto.Model}
+          description={producto.Description}
           brand={producto.Brand}
           price={producto.Price}
           img_product={producto.Img_product}
           stock={producto.Stock}
-          description={producto.description}
           category={producto.Category}
           key={producto.id}
         />

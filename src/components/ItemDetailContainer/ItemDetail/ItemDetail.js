@@ -8,6 +8,7 @@ const ItemDetail = ({
   img_product,
   product_type,
   model,
+  description,
   brand,
   price,
   id,
@@ -62,7 +63,9 @@ const ItemDetail = ({
               </h4>
               <p>Ver Promociones Bancarias</p>
               <br />
-              <br />
+              <p>
+                <strong>Descripcion:</strong> {description}
+              </p>
               <h5>Stock Disponible: {stock}</h5>
               <div className="counter">
                 {itemCountVisible && <ItemCount stock={stock} onAdd={onAdd} />}

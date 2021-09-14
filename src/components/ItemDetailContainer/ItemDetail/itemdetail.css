@@ -14,7 +14,7 @@
     text-decoration: none;
 }
 .product-image{
-    width: 70%;
+    width: 80%;
     height: 100%;
     margin: auto;
 }
@@ -34,7 +34,7 @@
     font-size: 20px;
 }
 .counter{
-    margin: auto;
+    margin: 0;
     width: 50%;
 }
 
@@ -84,6 +84,10 @@
         margin-right: 0.5rem;
         font-size: 1rem;
         color: #354C8A;
+    }
+    .counter{
+        margin: auto;
+        width: 50%;
     }
 }
 
