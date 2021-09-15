@@ -41,10 +41,10 @@ export const productDetail = (id) => {
 
 export const addOrder = (cart, totalCart, buyer, date) => {
   const orderTotal = addDoc(collection(db, "orders"), {
-    buyer: buyer,
     cart: cart,
-    date: date,
     totalcart: totalCart,
+    buyer: buyer,
+    date: date,
   });
   return orderTotal;
 };

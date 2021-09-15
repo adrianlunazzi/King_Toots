@@ -5,7 +5,8 @@ import { CartContext } from "../contexts/CartContext";
 import "../Thanks/thankyoupage.css";
 
 const ThankyouPage = () => {
-  const { cart, id, buyer, setCart } = useContext(CartContext);
+  const { cart, id, setCart, comprador, setComprador } =
+    useContext(CartContext);
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
@@ -19,16 +20,16 @@ const ThankyouPage = () => {
     </div>
   ));
 
-  const buyerPurchase = buyer.map((item) => (
+  const buyerInfo = comprador.map((item) => (
     <div key={item.Email}>
       <p> {item.Nombre}</p>
-      <p> {item.Phone}</p>
-      <p> {item.Email}</p>
+      <p>{item.Phone}</p>
+      <p>{item.Email}</p>
     </div>
   ));
-
   const CleanCart = () => {
     setCart([]);
+    setComprador([]);
   };
 
   return (
@@ -37,7 +38,7 @@ const ThankyouPage = () => {
       <br />
       <div className="thankyou-container">
         <h2>Datos del Comprador</h2>
-        <div>{buyerPurchase}</div>
+        <div>{buyerInfo}</div>
       </div>
 
       <div className="thankyou-container">

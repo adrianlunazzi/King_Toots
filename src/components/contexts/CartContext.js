@@ -8,7 +8,7 @@ const CartFunction = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [units, setUnits] = useState(0);
   const [id, setId] = useState("");
-
+  const [comprador, setComprador] = useState("");
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
@@ -49,14 +49,17 @@ const CartFunction = ({ children }) => {
     const remove = cart.filter((item) => item.id !== id);
     setCart(remove);
   };
+  const newBuyer = () => {
+    const nb = {
+      Nombre: document.getElementById("nombre").value,
+      Phone: document.getElementById("phone").value,
+      Email: document.getElementById("email").value,
+    };
+    setComprador([...comprador, nb]);
+  };
 
-  const buyer = [
-    {
-      Nombre: "Usuario",
-      Phone: "01144444444",
-      Email: "a@b.com.ar",
-    },
-  ];
+  const buyer = { comprador };
+  console.log("esto es buyer", buyer);
   const date = new Date().toLocaleString();
   const newOrder = () => {
     const orderToCart = addOrder(cart, totalCart, date, buyer);
@@ -79,6 +82,9 @@ const CartFunction = ({ children }) => {
         buyer,
         id,
         setId,
+        newBuyer,
+        comprador,
+        setComprador,
       }}>
       {children}
     </CartContext.Provider>

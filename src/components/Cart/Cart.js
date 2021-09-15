@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart, deleteAll, deleteItem, newOrder } = useContext(CartContext);
+  const { cart, deleteAll, deleteItem, newOrder, newBuyer } =
+    useContext(CartContext);
 
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
@@ -66,39 +67,45 @@ const Cart = () => {
           <h3>
             Por favor completa el siguiente formulario para finalizar tu compra
           </h3>
-          <label>Nombre:</label>
+
           <br />
+          <i className="far fa-user"></i>
           <input
+            className="contact-input"
             type="text"
             name="nombre"
             id="nombre"
             placeholder="Ingresa tu nombre"
           />
           <br />
-          <label>Telefono:</label>
+
           <br />
+          <i className="fas fa-mobile-alt"></i>
           <input
+            className="contact-input"
             type="number"
             name="phone"
             id="phone"
             placeholder="Ingresa tu telefono"
           />
           <br />
-          <label>Email:</label>
+
           <br />
+          <i className="far fa-envelope"></i>
           <input
+            className="contact-input"
             type="email"
             name="email"
             id="email"
             placeholder="Ingresa tu email"
           />
-          <button>Enviar info</button>
         </form>
         <Link to="/Thankyou">
           <button
             className="btn-finish"
             onClick={() => {
               newOrder();
+              newBuyer();
             }}>
             <i className="fas fa-file-invoice-dollar"></i>
             Comprar!
