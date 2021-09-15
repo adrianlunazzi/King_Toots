@@ -28,7 +28,7 @@ const Cart = () => {
         {cart.map((item) => (
           <>
             <div className="items-cart-conteiner">
-              <div className="cart-key"> </div>
+              <div className="cart-key">key={item.id} </div>
               <div>
                 <img src={item.img} alt="" />
               </div>
@@ -51,17 +51,49 @@ const Cart = () => {
           </>
         ))}
 
-        <div className="total-container">
-          <h4 className="total-text">El total de tu compra es: ${totalCart}</h4>
-        </div>
-        <button className="btn-delete-all" onClick={() => deleteAll()}>
-          <i className="fas fa-trash-alt"></i>Vaciar Carrito
-        </button>
         <Link to="/">
           <button className="btn-add-more">
             <i className="fas fa-cart-plus"></i>Seguir Comprando
           </button>
         </Link>
+        <button className="btn-delete-all" onClick={() => deleteAll()}>
+          <i className="fas fa-trash-alt"></i>Vaciar Carrito
+        </button>
+        <div className="total-container">
+          <h4 className="total-text">El total de tu compra es: ${totalCart}</h4>
+        </div>
+        <form action="" id="form" className="form-container">
+          <h3>
+            Por favor completa el siguiente formulario para finalizar tu compra
+          </h3>
+          <label>Nombre:</label>
+          <br />
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Ingresa tu nombre"
+          />
+          <br />
+          <label>Telefono:</label>
+          <br />
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            placeholder="Ingresa tu telefono"
+          />
+          <br />
+          <label>Email:</label>
+          <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingresa tu email"
+          />
+          <button>Enviar info</button>
+        </form>
         <Link to="/Thankyou">
           <button
             className="btn-finish"
@@ -69,7 +101,7 @@ const Cart = () => {
               newOrder();
             }}>
             <i className="fas fa-file-invoice-dollar"></i>
-            Finalizar Compra
+            Comprar!
           </button>
         </Link>
       </>

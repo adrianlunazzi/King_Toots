@@ -23,6 +23,7 @@
 
 .total-container{
     background-color: #1b1b1b;
+    height: 5rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -53,7 +54,7 @@
 }
 
 .btn-add-more{
-    width: 50%;
+    width: 100%;
     height: 50px;
     color: white;
     background-color: rgb(0, 140, 255);
@@ -65,7 +66,7 @@
 }
 
 .btn-finish{
-    width: 50%;
+    width: 100%;
     height: 50px;
     color: white;
     background-color: rgb(6, 151, 38);
@@ -103,6 +104,13 @@
 
 .cart-key{
     display:none;
+}
+
+.form-container{
+margin: auto;
+width: 100%;
+text-align: center;
+padding: 20px;
 }
 @media  screen and (max-width: 768px){
     .items-cart-conteiner{

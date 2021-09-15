@@ -19,8 +19,7 @@ Para el desarrollo de este sitio se aplicaron los conceptos aprendidos en el cur
 #  🩺 Para inicializar el modo test  `npm test` 
 
 # 🧰 Dependencias instaladas:
-
--- react
--- react-router-dom
--- firebase
+### react
+### react-router-dom
+### firebase
 
