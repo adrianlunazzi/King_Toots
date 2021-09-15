@@ -26,9 +26,9 @@ const Cart = () => {
         <h3 className="cart-title">Mi Compra</h3>
         <br />
         {cart.map((item) => (
-          <>
+          <div key={item.id}>
             <div className="items-cart-conteiner">
-              <div className="cart-key">key={item.id} </div>
+              <div className="cart-key"> </div>
               <div>
                 <img src={item.img} alt="" />
               </div>
@@ -48,7 +48,7 @@ const Cart = () => {
                 <i className="fas fa-times"></i>
               </button>
             </div>
-          </>
+          </div>
         ))}
 
         <Link to="/">

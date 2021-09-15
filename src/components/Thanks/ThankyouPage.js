@@ -10,12 +10,20 @@ const ThankyouPage = () => {
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
   const productPurchase = cart.map((item) => (
-    <div className="product-purchase-container">
+    <div className="product-purchase-container" key={item.id}>
       {item.type}
       <p> {item.brand}</p>
       <p>{item.model}</p>
       <p>cantidad: {item.quantity}</p>
       <p>${item.price}</p>
+    </div>
+  ));
+
+  const buyerPurchase = buyer.map((item) => (
+    <div key={item.Email}>
+      <p> {item.Nombre}</p>
+      <p> {item.Phone}</p>
+      <p> {item.Email}</p>
     </div>
   ));
 
@@ -29,6 +37,7 @@ const ThankyouPage = () => {
       <br />
       <div className="thankyou-container">
         <h2>Datos del Comprador</h2>
+        <div>{buyerPurchase}</div>
       </div>
 
       <div className="thankyou-container">

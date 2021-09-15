@@ -50,11 +50,13 @@ const CartFunction = ({ children }) => {
     setCart(remove);
   };
 
-  const buyer = {
-    Nombre: "Usuario",
-    Phone: "01144444444",
-    Email: "a@b.com.ar",
-  };
+  const buyer = [
+    {
+      Nombre: "Usuario",
+      Phone: "01144444444",
+      Email: "a@b.com.ar",
+    },
+  ];
   const date = new Date().toLocaleString();
   const newOrder = () => {
     const orderToCart = addOrder(cart, totalCart, date, buyer);
