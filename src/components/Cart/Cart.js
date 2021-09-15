@@ -28,7 +28,10 @@ const Cart = () => {
         {cart.map((item) => (
           <>
             <div className="items-cart-conteiner">
-              <img src={item.img} alt="" />
+              <div className="cart-key"> </div>
+              <div>
+                <img src={item.img} alt="" />
+              </div>
               <div>{item.product_type}</div>
               <div>{item.brand}</div>
               <div>{item.model}</div>
@@ -38,6 +41,7 @@ const Cart = () => {
                 {item.quantity}
               </div>
               <div>Subtotal: {item.price * item.quantity}</div>
+
               <button
                 className="cart-delete-btn"
                 onClick={() => deleteItem(item.id)}>

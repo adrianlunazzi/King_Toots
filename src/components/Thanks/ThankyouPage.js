@@ -7,7 +7,6 @@ const ThankyouPage = () => {
   const { cart, id } = useContext(CartContext);
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
-  console.log(cart);
   const productPurchase = cart.map((item) => (
     <div className="product-purchase-container">
       {item.type}
@@ -25,14 +24,17 @@ const ThankyouPage = () => {
       <div className="thankyou-container">
         <div>
           <strong>Compraste los siguientes articulos</strong>
+          <hr />
         </div>
         <div>{productPurchase}</div>
+        <hr />
 
         <h5>
           El numero de pedido es el: <strong>{id}</strong>
+          <hr />
         </h5>
         <h5>
-          El total de tu compra es: $<strong> {totalCart}</strong>
+          El importe total de tu compra es: $<strong> {totalCart}</strong>
         </h5>
       </div>
     </>

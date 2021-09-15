@@ -1,6 +1,6 @@
 .items-cart-conteiner{
    display: grid;
-   grid-template-columns: repeat(8, 1fr);
+   grid-template-columns: repeat(9, 1fr);
    width: 90%;
    align-items: center;
    margin: 20px;
@@ -101,6 +101,9 @@
         margin-top: 4rem;   
 }
 
+.cart-key{
+    display:none;
+}
 @media  screen and (max-width: 768px){
     .items-cart-conteiner{
     display: block;
