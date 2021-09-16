@@ -4,9 +4,8 @@ import { CartContext } from "../contexts/CartContext";
 
 import "../Thanks/thankyoupage.css";
 
-const ThankyouPage = () => {
-  const { cart, id, setCart, comprador, setComprador } =
-    useContext(CartContext);
+const Purchase = () => {
+  const { cart, comprador, cleanCart } = useContext(CartContext);
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
@@ -22,19 +21,25 @@ const ThankyouPage = () => {
 
   const buyerInfo = comprador.map((item) => (
     <div key={item.Email}>
-      <p> {item.Nombre}</p>
-      <p>{item.Phone}</p>
-      <p>{item.Email}</p>
+      <p>
+        Nombre:
+        <strong> {item.Nombre}</strong>
+      </p>
+      <p>
+        Telefono de contacto: <strong> {item.Phone}</strong>
+      </p>
+      <p>
+        Email: <strong>{item.Email}</strong>
+      </p>
     </div>
   ));
-  const CleanCart = () => {
-    setCart([]);
-    setComprador([]);
-  };
 
   return (
     <>
-      <h4 className="thanks-title">Muchas gracias por tu compra!!</h4>
+      <h4 className="thanks-title">
+        Antes de finalizar tu compra, verifica que los datos sean correctos
+      </h4>
+
       <br />
       <div className="thankyou-container">
         <h2>Datos del Comprador</h2>
@@ -43,24 +48,18 @@ const ThankyouPage = () => {
 
       <div className="thankyou-container">
         <div>
-          <strong>Compraste los siguientes articulos</strong>
+          <strong>Tu Pedido:</strong>
           <hr />
         </div>
-        <div>{productPurchase}</div>
+        <div className="product-info-container">{productPurchase}</div>
         <hr />
 
-        <h5>
-          El numero de pedido es el: <strong>{id}</strong>
-          <hr />
-        </h5>
-        <h5>
-          El importe total de tu compra es: $<strong> {totalCart}</strong>
-        </h5>
+        <h5>El importe total de tu compra es: $ {totalCart}</h5>
         <br />
         <br />
-        <Link to="/">
-          <button className="btn-add-more" onClick={() => CleanCart()}>
-            <i className="fas fa-cart-plus"></i>Volver a la tienda
+        <Link to="/Thanks">
+          <button className="btn-show-shop" onClick={() => cleanCart()}>
+            <i className="fas fa-money-check-alt"></i>Pagar!
           </button>
         </Link>
       </div>
@@ -68,4 +67,4 @@ const ThankyouPage = () => {
   );
 };
 
-export default ThankyouPage;
+export default Purchase;

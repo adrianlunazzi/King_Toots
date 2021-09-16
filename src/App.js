@@ -4,7 +4,8 @@ import ItemList from "./components/ItemList/ItemList";
 import ItemListContainer from "./components/ItemListConteiner/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Footer from "./components/Footer/Footer";
-import ThankyouPage from "./components/Thanks/ThankyouPage";
+import Thanks from "./components/Thanks/Thanks";
+import Purchase from "./components/Thanks/Purchase";
 import Cart from "./components/Cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -31,7 +32,8 @@ function App() {
           <Route path="/Cart" exact>
             <Cart />
           </Route>
-          <Route exact path="/Thankyou" component={ThankyouPage} />
+          <Route exact path="/Purchase" component={Purchase} />
+          <Route exact path="/Thanks" component={Thanks} />
           <Footer />
         </CartFunction>
       </BrowserRouter>

@@ -76,6 +76,7 @@ const Cart = () => {
             name="nombre"
             id="nombre"
             placeholder="Ingresa tu nombre"
+            required="true"
           />
           <br />
 
@@ -87,6 +88,7 @@ const Cart = () => {
             name="phone"
             id="phone"
             placeholder="Ingresa tu telefono"
+            required="true"
           />
           <br />
 
@@ -98,14 +100,15 @@ const Cart = () => {
             name="email"
             id="email"
             placeholder="Ingresa tu email"
+            required
           />
         </form>
-        <Link to="/Thankyou">
+        <Link to="/Purchase">
           <button
             className="btn-finish"
             onClick={() => {
-              newOrder();
               newBuyer();
+              newOrder();
             }}>
             <i className="fas fa-file-invoice-dollar"></i>
             Comprar!

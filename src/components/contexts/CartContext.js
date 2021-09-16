@@ -58,14 +58,18 @@ const CartFunction = ({ children }) => {
     setComprador([...comprador, nb]);
   };
 
-  const buyer = { comprador };
-  console.log("esto es buyer", buyer);
+  const buyer = comprador;
   const date = new Date().toLocaleString();
   const newOrder = () => {
     const orderToCart = addOrder(cart, totalCart, date, buyer);
     orderToCart.then((data) => {
       setId(data.id);
     });
+  };
+
+  const cleanCart = () => {
+    setCart([]);
+    setComprador([]);
   };
 
   return (
@@ -79,12 +83,13 @@ const CartFunction = ({ children }) => {
         deleteAll,
         deleteItem,
         newOrder,
-        buyer,
         id,
         setId,
         newBuyer,
         comprador,
         setComprador,
+        buyer,
+        cleanCart,
       }}>
       {children}
     </CartContext.Provider>
