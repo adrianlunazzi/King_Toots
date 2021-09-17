@@ -12,6 +12,9 @@ const Thanks = () => {
       <h5>
         El numero de pedido es el: <strong>{id}</strong>
         <br />
+        <br />
+        Estaras recibiendo un mail con tu orden y los datos para coordinar la
+        entrega.
       </h5>
 
       <Link to="/">

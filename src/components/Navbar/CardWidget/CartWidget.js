@@ -7,18 +7,14 @@ const CartWidget = () => {
   const { cart } = useContext(CartContext);
   const cartQuantity = cart.reduce((acc, red) => acc + red.quantity, 0);
 
-  if (cart.length === 0) {
-    return <>-</>;
-  } else {
-    return (
-      <div className="cart-icon">
-        <Link to="/Cart">
-          <i className="fas fa-cart-arrow-down"></i>
-        </Link>
-        <p>{cartQuantity}</p>
-      </div>
-    );
-  }
+  return (
+    <div className="cart-icon">
+      <Link to="/Cart">
+        <i className="fas fa-cart-arrow-down"></i>
+      </Link>
+      <p>{cartQuantity}</p>
+    </div>
+  );
 };
 
 export default CartWidget;
